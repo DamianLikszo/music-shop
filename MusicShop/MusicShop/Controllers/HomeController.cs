@@ -11,6 +11,7 @@ namespace MusicShop.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            // Dodane zmiany
             return View();
         }
     }
