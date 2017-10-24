@@ -13,6 +13,16 @@ namespace MusicShop.Controllers
         {
             // Dodane zmiany
             return View();
+
+            //Logowanie
+        }
+
+        public ActionResult Index2()
+        {
+            // Dodane zmiany
+            return View();
+
+            //Logowanie
         }
     }
 }
