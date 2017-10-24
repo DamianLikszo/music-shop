@@ -132,7 +132,9 @@
     <Content Include="Content\Images\spodigly-logo-main.png" />
     <Content Include="Content\Images\twitter-share.png" />
     <Content Include="Content\Images\upload.png" />
+    <Content Include="Content\Site-prototype.css" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Main.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
