@@ -6,20 +6,22 @@ using System.Web.Mvc;
 
 namespace MusicShop.Controllers
 {
-    public class HomeController : Controller
+    public class StoreController : Controller
     {
-        // GET: Home
+        // GET: Store
         public ActionResult Index()
         {
-            // Dodane zmiany
             return View();
-
-            //Logowanie
         }
 
-        public ActionResult StaticContent(string viewname)
+        public ActionResult Details()
         {
-            return View(viewname);
+            return View();
+        }
+
+        public ActionResult List()
+        {
+            return View();
         }
     }
 }
