@@ -29,6 +29,12 @@ namespace MusicShop.Controllers
             return View(vm);
         }
 
+        public ActionResult Index2()
+        {
+            return View("Kontakt");
+        }
+
+
         public ActionResult StaticContent(string viewname)
         {
             return View(viewname);
