@@ -1,0 +1,65 @@
+﻿@using MusicShop.Infrastructure
+@model MusicShop.Models.Album
+
+@{
+    ViewBag.Title = Model.ArtistName +" - "+ Model.AlbumTitle;
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div id="productlist-content">
+    @Html.Action("GenresMenu");
+
+    <div id="productlist-rightsection">
+        <div id="breadcrumb-section">
+            <img src="../Content/Images/home-small.png" />
+            <a href="nav">
+                Start > Hip Hop
+            </a>
+        </div>
+
+        <section id="product-details-section">
+            <div id="product-details-left">
+
+                <img src="@Url.AlbumCoverPath(Model.CoverFileName)" />
+
+                <div id="product-details-share">
+                    <a href="#" target="_blank"></a>
+                    <div></div>
+                    <a href="#" target="_blank"></a>
+                </div>
+
+            </div>
+
+            <div id="product-details-right">
+                <div id="product-details-names">
+
+                    <h1>
+                        @Model.AlbumTitle
+                    </h1>
+
+                    <h2>
+                        @Model.ArtistName
+                    </h2>
+
+                </div>
+
+                <div id="product-details-price">
+                    <div>
+                        @String.Format("{0:0.##}", Model.Price)<span>PLN</span>
+                    </div>
+                    <a href="@Url.Action("AddToCart", "Cart", new { id = Model.AlbumId })"></a>
+                </div>
+
+                <div id="product-details-description">
+                    @Model.Description
+                </div>
+
+                <div id="product-details-info">
+                    Bezpłatna przesyłka. Czas realizacji: 24 godziny.
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</div>

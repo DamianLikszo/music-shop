@@ -17,13 +17,21 @@ namespace MusicShop.Controllers
             return View();
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+                return new HttpNotFoundResult();
+
+            var album = db.Albums.Find(id);
+
+            return View(album);
         }
 
         public ActionResult List(string genrename)
         {
+            if (genrename == null)
+                return new HttpNotFoundResult();
+
             var genre = db.Genres.Include("Albums").Where(g => g.Name.ToUpper() == genrename.ToUpper()).Single();
             var albums = genre.Albums.ToList();
 

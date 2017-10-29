@@ -28,7 +28,7 @@ namespace MusicShop
             routes.MapRoute(
                 name: "ProductList",
                 url: "gatunki/{genrename}",
-                defaults: new { controller = "Store", action = "List", genrename = "rock" },
+                defaults: new { controller = "Store", action = "List" },
                 constraints: new { genrename = @"[\w& ]+" }
             );
 
