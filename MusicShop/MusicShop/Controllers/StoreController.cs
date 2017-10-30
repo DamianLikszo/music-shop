@@ -39,6 +39,7 @@ namespace MusicShop.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration =  10800)] // 3*60*60
         public ActionResult GenresMenu()
         {
             var genres = db.Genres.ToList();
