@@ -21,9 +21,9 @@
                 DOŁĄCZ DO 1500 FANÓW NA FB
             </a>
 
-            <a id="cart-header-link" href="">
-                KOSZYK (0)
-                <span></span>
+            <a id="cart-header-link" href="@Url.Action("Index", "Cart")">
+                KOSZYK (<span id="cart-header-items-count">@Html.Action("GetCartItemsCount", "Cart")</span>)
+                <span id="cart-header-logo"></span>
             </a>
         </div>
         <a id="main-header-logo" href="@Url.Content("~/")">

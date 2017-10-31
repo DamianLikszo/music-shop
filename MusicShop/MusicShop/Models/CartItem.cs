@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MusicShop.Models
 {
-    public class CartItems
+    public class CartItem
     {
         public Album Album { get; set; }
         public int Quantity { get; set; }

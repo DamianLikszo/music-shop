@@ -32,7 +32,7 @@ namespace MusicShop.Infrastructure
                 var albumToAdd = db.Albums.Where(a => a.AlbumId == albumId).SingleOrDefault();
                 if( albumToAdd != null )
                 {
-                    var newCartItem = new CartItems()
+                    var newCartItem = new CartItem()
                     {
                         Album = albumToAdd,
                         Quantity = 1,
@@ -46,17 +46,17 @@ namespace MusicShop.Infrastructure
             session.Set(CartSessionKey, cart);
         }
 
-        public List<CartItems> GetCart()
+        public List<CartItem> GetCart()
         {
-            List<CartItems> cart;
+            List<CartItem> cart;
 
-            if( session.Get<List<CartItems>>(CartSessionKey) == null)
+            if( session.Get<List<CartItem>>(CartSessionKey) == null)
             {
-                cart = new List<CartItems>();
+                cart = new List<CartItem>();
             }
             else
             {
-                cart = session.Get<List<CartItems>>(CartSessionKey) as List<CartItems>;
+                cart = session.Get<List<CartItem>>(CartSessionKey) as List<CartItem>;
             }
 
             return cart;
@@ -130,7 +130,7 @@ namespace MusicShop.Infrastructure
 
         public void EmptyCart()
         {
-            session.Set<List<CartItems>>(CartSessionKey, null);
+            session.Set<List<CartItem>>(CartSessionKey, null);
         }
     }
 }
