@@ -1,28 +1,17 @@
 ﻿
 @{
     ViewBag.Title = "List";
-    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+    Layout = "~/Views/Shared/_RightSectionLayout.cshtml";
 }
 
-<div id="productlist-content">
+@Html.Partial("_ProductsList")
 
-    @Html.Action("GenresMenu")
-
-    <div id="productlist-rightsection">
-        <div id="breadcrumb-section">
-            <img src="@Url.Content("~/Content/Images/home-small.png")" />
-            @Html.MvcSiteMap().SiteMapPath()
-
-            <form id="search-form" method="get" data-ajax="true" data-ajax-target="#productlist-section">
-                <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions")" placeholder="Wprowadź tekst, aby wyfiltrować..." />
-                <input type="submit" value="" />
-            </form>
-        </div>
-
-        @Html.Partial("_ProductsList")
-
-    </div>
-</div>
+@section SearchForm {
+    <form id="search-form" method="get" data-ajax="true" data-ajax-target="#productlist-section">
+        <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("AlbumsSuggestions")" placeholder="Wprowadź tekst, aby wyfiltrować..." />
+        <input type="submit" value="" />
+    </form>
+}
 
 @section ScriptsBottom {
     @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
